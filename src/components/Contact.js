@@ -17,40 +17,36 @@ const Contact = ({ data }) => {
   return (
     <>
       <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-        {data.map((contact) => (
-          <>
-            <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                <Avatar alt={contact.name} src={contact.photo} />
-              </ListItemAvatar>
-              <ListItemText
-                primary={contact.name}
-                secondary={
-                  <React.Fragment>
-                    <Typography
-                      sx={{ display: "inline" }}
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                    >
-                      {contact.phone}
-                    </Typography>
-                    <br />
-                    <Typography
-                      sx={{ display: "inline" }}
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                    >
-                      {contact.email}
-                    </Typography>
-                  </React.Fragment>
-                }
-              />
-            </ListItem>
-            <Divider variant="inset" component="li" />
-          </>
-        ))}
+        <ListItem alignItems="flex-start">
+          <ListItemAvatar>
+            <Avatar alt={data.name} src={data.photo} />
+          </ListItemAvatar>
+          <ListItemText
+            primary={data.name}
+            secondary={
+              <React.Fragment>
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body2"
+                  color="text.primary"
+                >
+                  {data.phone}
+                </Typography>
+                <br />
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body2"
+                  color="text.primary"
+                >
+                  {data.email}
+                </Typography>
+              </React.Fragment>
+            }
+          />
+        </ListItem>
+        <Divider variant="inset" component="li" />
       </List>
     </>
   );

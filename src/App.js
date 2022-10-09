@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CssBaseline, Grid, Paper } from "@mui/material";
+import { CssBaseline, Grid, Paper} from "@mui/material";
 import "./App.css";
 import Header from "./components/Header";
 import Contact from "./components/Contact";
@@ -31,7 +31,11 @@ const App = () => {
           <ContactForm add={addContact} />
         </Grid>
         <Grid item xs={12} sm={6} component={Paper} elevation={3}>
-          <Contact data={contact} />
+          {contact.map((c) => (
+            <div key={c.name}>
+            <Contact data={c} />
+            </div>
+          ))}
         </Grid>
       </Grid>
     </div>
